@@ -1,0 +1,10 @@
+- id: console-log-check
+  name: Console Log Check
+  description: Check if console.log() is in js code
+  entry: console-log-check
+  language: python
+- id: debugger-check
+  name: Debugger Check
+  description: Check if debugger; is in js code
+  entry: debugger-check
+  language: python
