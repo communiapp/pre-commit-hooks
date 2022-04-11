@@ -9,7 +9,7 @@ def check_file(filename: str) -> bool:
     for line in lines:
         if "\t" in line:
             fixed_tabs = fixed_tabs + 1
-        newfile = newfile + line.replace("\t", "    ") + "\n"
+        newfile = newfile + line.replace(b"\t", bytes("    ")) + "\n"
     file.close()
     file_out = open(filename, mode='wb')
     file_out.write(newfile)
