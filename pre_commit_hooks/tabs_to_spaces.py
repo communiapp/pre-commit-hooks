@@ -2,7 +2,7 @@ import argparse
 from typing import Sequence
 
 def check_file(filename: str) -> bool:
-    with open(filename, mode='rw') as file:
+    with open(filename, mode='r') as file:
         lines = file.readlines()
     newfile = ""
     fixed_tabs = 0
@@ -10,6 +10,10 @@ def check_file(filename: str) -> bool:
         if "\t" in line:
             fixed_tabs = fixed_tabs + 1
         newfile = newfile + line.replace("\t", "    ") + "\n"
+    file.close()
+    file_out = open(filename, mode='w')
+    file_out.write(newfile)
+    file_out.close()
     return fixed_tabs
 
 def main(argv: Sequence[str] | None = None) -> int:
