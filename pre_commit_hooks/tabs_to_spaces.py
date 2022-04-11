@@ -7,7 +7,7 @@ def check_file(filename: str) -> bool:
     newfile = ""
     fixed_tabs = 0
     for line in lines:
-        if "\t" in line:
+        if b"\t" in line:
             fixed_tabs = fixed_tabs + 1
         newfile = newfile + line.replace(b"\t", bytes("    ")) + "\n"
     file.close()
