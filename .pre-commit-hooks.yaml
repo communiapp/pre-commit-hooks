@@ -8,3 +8,8 @@
   description: Check if debugger; is in js code
   entry: debugger-check
   language: python
+- id: tabs-to-spaces
+  name: Tabs to spaces
+  description: Replace tabs with spaces
+  entry: tabs-to-spaces
+  language: python
