@@ -2,7 +2,7 @@ import argparse
 from typing import Sequence
 
 def check_file(filename: str) -> bool:
-    with open(filename, mode='r') as file:
+    with open(filename, mode='rb') as file:
         lines = file.readlines()
     newfile = ""
     fixed_tabs = 0
@@ -11,7 +11,7 @@ def check_file(filename: str) -> bool:
             fixed_tabs = fixed_tabs + 1
         newfile = newfile + line.replace("\t", "    ") + "\n"
     file.close()
-    file_out = open(filename, mode='w')
+    file_out = open(filename, mode='wb')
     file_out.write(newfile)
     file_out.close()
     return fixed_tabs
